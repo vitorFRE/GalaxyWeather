@@ -1,0 +1,23 @@
+input,
+textarea {
+  margin: 10px 0 10px 0;
+  display: block;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  background: #FFF5F1;
+  transition: 0.2s;
+}
+
+.input label {
+  font-size: 1.2rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFF7DF;
+  background: white;
+  box-shadow: 0 0 0 3px #FFA081;
+}
