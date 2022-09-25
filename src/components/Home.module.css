@@ -97,3 +97,22 @@
   display: flex;
   gap: 20px;
 }
+
+@media (max-width: 870px) {
+  .main {
+    grid-template-columns: auto;
+    margin-top: 0;
+  }
+  .main_form {
+    height: auto;
+    padding: 20px 20px 0 20px;
+    border-radius: 0;
+  }
+  .horarios {
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+  }
+  .main_form button {
+    margin-bottom: 20px;
+  }
+}
