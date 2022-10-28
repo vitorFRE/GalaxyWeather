@@ -90,14 +90,6 @@
   right: -40px;
 }
 
-.horarios {
-  font-size: 20px;
-  margin-top: 50px;
-  text-align: center;
-  display: flex;
-  gap: 20px;
-}
-
 @media (max-width: 870px) {
   .main {
     grid-template-columns: auto;
@@ -114,5 +106,8 @@
   }
   .main_form button {
     margin-bottom: 20px;
+  }
+  .main_tempo {
+    height: 300px;
   }
 }

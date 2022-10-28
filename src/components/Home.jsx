@@ -11,8 +11,11 @@ const Home = () => {
   async function busca(event) {
     event.preventDefault();
     const { response, json } = await request(
-      `http://api.weatherapi.com/v1/forecast.json?key=9a6293679f5d46efb89225346221809&q=${cidade}&lang=pt`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${
+        import.meta.env.VITE_SOME_WEATHER_API_KEY
+      }&lang=pt_br`,
     );
+    console.log(data);
   }
 
   return (
@@ -46,58 +49,23 @@ const Home = () => {
         <div className={styles.main_tempo}>
           <div className={styles.tempo_name}>
             <h1>
-              {data.location.name}, {data.location.region}
+              {data.name}, {data.sys.country}
             </h1>
-            <img src={data.current.condition.icon} alt="" />
+            <img
+              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
+              alt=""
+            />
           </div>
           <div className={styles.tempo}>
-            <p className={styles.tempo_c}>{data.current.temp_c}°C |</p>
-            <p>{data.current.condition.text}</p>
+            <p className={styles.tempo_c}>{data.main.temp}°C |</p>
+            <p>{data.weather[0].description}</p>
           </div>
           <div>
             <h2 className={styles.maxmin_title}>Temperatura | Min, Max</h2>
             <div className={styles.maxmin}>
-              <h3 className={styles.min}>
-                {data.forecast.forecastday[0].day.mintemp_c + '°C'}
-              </h3>
-              <h3 className={styles.max}>
-                {data.forecast.forecastday[0].day.maxtemp_c + '°C'}
-              </h3>
+              <h3 className={styles.min}>{data.main.temp_min + '°C'}</h3>
+              <h3 className={styles.max}>{data.main.temp_max + '°C'}</h3>
             </div>
-          </div>
-          <div className={styles.horarios}>
-            <ul>
-              <li>00:00</li>
-              <li>{data.forecast.forecastday[0].hour[0].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>03:00</li>
-              <li>{data.forecast.forecastday[0].hour[3].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>06:00</li>
-              <li>{data.forecast.forecastday[0].hour[6].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>09:00</li>
-              <li>{data.forecast.forecastday[0].hour[9].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>12:00</li>
-              <li>{data.forecast.forecastday[0].hour[12].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>15:00</li>
-              <li>{data.forecast.forecastday[0].hour[15].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>18:00</li>
-              <li>{data.forecast.forecastday[0].hour[18].temp_c + '°C'}</li>
-            </ul>
-            <ul>
-              <li>21:00</li>
-              <li>{data.forecast.forecastday[0].hour[21].temp_c + '°C'}</li>
-            </ul>
           </div>
         </div>
       ) : null}
