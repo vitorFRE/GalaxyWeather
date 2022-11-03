@@ -6,8 +6,7 @@ body {
   margin: 0px;
   height: 100h;
   background-color: black;
-  background: linear-gradient(130.02deg, #f78965 0.66%, #dd6037 83.32%)
-    no-repeat center center fixed;
+  background: url(./assets/bg.svg);
   --font-1: Helvetica, Arial, sans-serif;
   font-family: var(--font-1);
 }
@@ -35,10 +34,4 @@ img {
   max-width: 75rem;
   padding: 0 0rem;
   margin: 0 auto;
-}
-
-@media (max-width: 870px) {
-  body {
-    background: black
-  }
 }
