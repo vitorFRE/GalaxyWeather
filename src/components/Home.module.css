@@ -1,19 +1,18 @@
 .main {
   margin-top: 200px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  justify-content: center;
 }
 
 .main_form {
-  border-radius: 10px 0 0 10px;
-  height: 500px;
-  padding: 100px 20px 0 20px;
+  border-radius: 10px 10px 0 0;
+  padding: 20px 20px 20px 20px;
   background: #FFF6F3;
 }
 .main_tempo {
   padding: 50px 20px 0 20px;
   background-image: url(https://images.unsplash.com/photo-1575881875475-31023242e3f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0 10px 10px;
   color: white;
   box-shadow: -5px 0 5px -5px #222;
 }
@@ -55,6 +54,7 @@
   margin-top: 10px;
   gap: 50px;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 
@@ -92,13 +92,13 @@
 
 @media (max-width: 870px) {
   .main {
-    grid-template-columns: auto;
-    margin-top: 0;
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .main_form {
     height: auto;
     padding: 20px 20px 0 20px;
-    border-radius: 0;
   }
   .horarios {
     flex-wrap: wrap;
@@ -106,8 +106,5 @@
   }
   .main_form button {
     margin-bottom: 20px;
-  }
-  .main_tempo {
-    height: 300px;
   }
 }
